@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPS</title>
+
+    </head>
+    <body>
+        <p>Rock Paper Scissors Game!</p>
+        <p>Pick one:</p>
+        <button onclick="{
+        const bot = Math.random();
+
+        if ( bot < 0.33){
+            score.ties ++;
+        alert ( `TIE  
+Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        }
+        else if (bot <0.66){
+            score.loses++;
+        alert ( `LOSS  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        
+        }
+        else{
+            score.wins ++;
+            alert ( `WIN  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        }
+        localStorage.setItem('score',JSON.stringify(score))
+        console.log(bot)
+        }
+        ">Rock</button>
+        <button onclick="{
+        const bot = Math.random();
+
+        if ( bot < 0.33){
+            score.wins ++;
+            alert ( `WIN  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        }
+        else if (bot <0.66){
+            score.ties ++;
+            alert ( `TIE  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        }
+        else{
+            score.loses++;
+            alert ( `LOSS  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        }
+        localStorage.setItem('score',JSON.stringify(score))
+        console.log(bot)
+        }
+        ">Paper</button>
+        <button onclick="{
+        const bot = Math.random();
+
+        if ( bot < 0.33){
+            score.loses++;
+            alert ( `LOSS  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+       
+        }
+        else if (bot <0.66){
+            score.wins++;
+            alert ( `WIN  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+            
+        }
+        else{
+            score.ties++;
+            alert ( `TIE  Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}` )
+        
+        }
+        localStorage.setItem('score',JSON.stringify(score))
+        console.log(bot)
+        }
+        ">Scissors</button>
+        <button onclick="score.wins=0;score.loses=0;score.ties=0">Reset Score</button>
+        <script>
+            let score = JSON.parse(localStorage.getItem('score')) || { wins:0,loses:0,ties:0}
+
+            
+            
+            console.log(JSON.parse(localStorage.getItem('score')))
+        </script>
+    </body>
+</html>
